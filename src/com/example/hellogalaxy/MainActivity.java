@@ -1,11 +1,13 @@
 package com.example.hellogalaxy;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 @Override
@@ -32,6 +34,12 @@ public void onClick(View v) {
 			// エディットテキストから入力内容を取り出す
 			EditText etv = (EditText)findViewById(R.id.edtFirst);
 				String inputMsg = etv.getText().toString();
+			EditText etv2 = (EditText)findViewById(R.id.edtFamily);
+					String inputMsg2 = etv2.getText().toString();
+
+			TextView tv = (TextView)findViewById(R.id.txvMsg);
+			Intent intent = new Intent(MainActivity.this, MsgActivity.class);
+			startActivity(intent);
 		}
 }
 
